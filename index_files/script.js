@@ -44,6 +44,10 @@ $(document).ready(function () {
                 'name' : name,
                 'phone': phone
             },
+            beforeSend: function () {
+                swal('Обработка', 'Ожидайте окончания', 'info');
+                $('.modal-body input:eq(1)').val('');
+            },
             success: function(data) { 
                 console.log(data);
                 if (data == 'error'){
